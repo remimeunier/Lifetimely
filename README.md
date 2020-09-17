@@ -11,7 +11,7 @@ to run test :
   ruby test_daily_cost.rb
 ```
 
-## SQL CHALLENGE
+## SQL Challenge
 
 Was tested with PostgreSQL 11 : https://www.db-fiddle.com/f/o67W3PGzLwGXAwyZEGkqh9/1
 
@@ -27,7 +27,7 @@ CREATE TABLE orders (
 INSERT INTO 
     orders (customer_id, date, cost)
 VALUES
-  	(1, '2020-01-05', 10),
+    (1, '2020-01-05', 10),
     (2, '2018-01-05', 10),
     (4, '2019-01-05', 10),
     (2, '2019-01-05', 10),
