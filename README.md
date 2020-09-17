@@ -13,7 +13,7 @@ to run test :
 
 ## SQL CHALLENGE
 
-Was tested with PostgreSQL 11 : https://www.db-fiddle.com/f/o67W3PGzLwGXAwyZEGkqh9/0
+Was tested with PostgreSQL 11 : https://www.db-fiddle.com/f/o67W3PGzLwGXAwyZEGkqh9/1
 
 SCHEMA SQL with provided data : 
 ```
@@ -43,8 +43,8 @@ Querry :
 ```
 SELECT
    CASE
-      WHEN numberOfOrders > 2 THEN 3 
-      ELSE numberOfOrders 
+      WHEN intermediat_number_of_orders > 2 THEN 3 
+      ELSE intermediat_number_of_orders 
    END number_of_orders, 
    CASE
       WHEN (DATE_PART('years', NOW()) - DATE_PART('years', MAX(date))) > 2 THEN 3 
@@ -55,7 +55,7 @@ FROM
    orders 
    INNER JOIN
       (
-         SELECT COUNT(DISTINCT id) AS numberOfOrders, customer_id 
+         SELECT COUNT(DISTINCT id) AS intermediat_number_of_orders, customer_id 
          FROM
             orders 
          GROUP BY
@@ -65,3 +65,4 @@ GROUP BY
    number_of_orders 
 ORDER BY
    number_of_orders DESC;
+```
